@@ -1,0 +1,42 @@
+{
+    "P001": {
+        "name": "John Doe",
+        "city": "New York",
+        "age": 29,
+        "gender": "Male",
+        "height": 175,
+        "weight": 70,
+        "bmi": 22.86,
+        "verdict": "Normal"
+    },
+    "P002": {
+        "name": "Jane Smith",
+        "city": "Los Angeles",
+        "age": 25,
+        "gender": "Female",
+        "height": 160,
+        "weight": 60,
+        "bmi": 23.44,
+        "verdict": "Normal"
+    },
+    "P003": {
+        "name": "Samuel Lee",
+        "city": "Chicago",
+        "age": 35,
+        "gender": "Male",
+        "height": 180,
+        "weight": 95,
+        "bmi": 29.32,
+        "verdict": "Overweight"
+    },
+    "P004": {
+        "name": "Emily Davis",
+        "city": "Miami",
+        "age": 42,
+        "gender": "Female",
+        "height": 165,
+        "weight": 80,
+        "bmi": 29.38,
+        "verdict": "Overweight"
+    }
+}
