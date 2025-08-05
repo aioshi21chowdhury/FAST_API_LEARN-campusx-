@@ -1,0 +1,80 @@
+1. make an environment
+2. install fastapi , unicorn,pyd
+3. main.py file show some "rout functions" in the page
+4. IN the terminal  run -->uvicorn main:app --reload, due to "--reload" it page load on its own 
+5.in the web page when we "http://127.-------right /docs" the docs show the documentation there that what are the functionalities of the api 
+6. no postman is required over here
+7.must understand the docs
+
+a mini project for doctors 
+requirements:
+record--> name,city,age,gender,height,weight,bmi,verdict
+view the profile the pacint (view)
+and update the pacient's data (update)
+ endpoint-->/create (C)
+            /view   (R)
+            /view/patient_id (R)
+            /update/patient_id (U)
+            /delete/patient  (D)
+4 methdos of interaction->CURD
+verb for the interaction:
+for create-->GET
+for update-->PUT
+for retrive-->POST
+for delete-->DELETE            
+
+# video 4
+#about path parameter#
+path parameter->are the dynamic segments of a url path used to identify any specific resource.
+http-------/view/"this part"<---- denots the specific resource
+use case --> to retrive, to update , to delete we use the path parameter
+
+path function()
+use to provide the metadata, validation , rules, and doc hints for path parameters 
+title, desc,example, > or < = or != , min and max length, rex 
+
+def view_patient(patient_id:str=Path(...,description="put the id of the patient",example="P00x")): 
+                                 |            |  desciption                        | id example
+
+HTTP response status codes :numbers issued by a server in response to a client's request. They indicate the outcome of the request                                
+1x:(ACCEPTED)The request was received and understood.
+ there is a persistent connection which means several requests
+ & responses are merged in a single connection. 
+ drawback of 1x :blocked all other requests until the response does not receive. all the information related to the header file is repeated in every request.
+2x:(ACCEPTED)The request was successfully received, understood, and accepted. 
+3x:(ERROR :INCOMPLETE REQUIEST FROM CLIENT)Further action needs to be taken by the client to complete the request. 
+4x:(ERROR:SERVER CANNOT ISSUE CLIENT SIDE )The request contains bad syntax or cannot be fulfilled by the server due to a client-side issue. 
+5x:(ERROR: SERVER SIDE ERROR)he server failed to fulfill an apparently valid request.
+
+200: standard success (GET & POST)
+201: resource created
+204: success but not return
+
+400: missing bad request
+401: cannot view without loging in
+403: logged in but forbidden info
+404: resource do not exist
+
+500: generic failure
+503: server down
+
+HTTPException --> return custom error exception
+inplace of return a json 
+
+# query parameter
+how it looks like ?
+"/products?category=electronics&price_max=500"
+                  ^               ^
+A query parameter, also known as a URL parameter or query string parameter, is a component of a Uniform Resource Locator (URL) that provides additional information to a web server when a request is made. These parameters are appended to the end of the base URL, following a question mark (?).
+Structure:
+Question Mark (?): Initiates the query string.
+Key-Value Pairs: Query parameters consist of one or more key-value pairs, where a key identifies the type of information being passed, and the value is the data associated with that key.
+Equals Sign (=): Separates the key from its value (e.g., category=books).
+Ampersand (&): Separates multiple key-value pairs when more than one parameter is used (e.g., category=books&page=1).
+
+what we will do here ?
+requirement:
+sort patient->       query
+         1.   sortby              2.  order
+        (weight,height         (ascending or descening)
+        ,bmi)    
